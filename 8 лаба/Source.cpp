@@ -5,6 +5,6 @@ int main() {
 	SetColor(LightGreen, White);
 	Interface<int> obj;
 	obj.menu();
-
+	system("pause");
 	return 0;
 }

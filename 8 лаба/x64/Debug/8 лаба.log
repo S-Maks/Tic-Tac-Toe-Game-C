@@ -1,0 +1,3 @@
+﻿  Game.cpp
+E:\2 Course\ООП\4 семестр\Tic-Tac-Toe-Game\8 лаба\Game.cpp(276,14): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  8 лаба.vcxproj -> E:\2 Course\ООП\4 семестр\Tic-Tac-Toe-Game\x64\Debug\8 лаба.exe

@@ -45,7 +45,13 @@ void Game::start() {
 	int x = 0; int y = 0;
 	bool flag = true;
 	while (kol < pow(this->size, 2) && flag) {
-		view(array);
+		if (this->size == 3) {
+			view(array);
+		}
+		else {
+			view1(array);
+		}
+
 		flag = move(x, y, array, kol);
 	}
 
@@ -53,7 +59,7 @@ void Game::start() {
 void Game::view(vector<vector<int>> array) {
 	system("cls");
 	cout << "-------------------" << endl;
-	for (int i = 0; i < 3; i++)// проход по строке поля
+	for (int i = 0; i < this->size; i++)// проход по строке поля
 	{
 		for (int a = 1; a < 6; ++a)//проход по вертикали(построчно)
 		{
@@ -210,16 +216,22 @@ bool Game::move(int& x, int& y, vector<vector<int>>& field, int& kol)
 	case 72: if (y != 0)y -= 1;//вверх
 
 		break;
-	case 80: if (y != 2)y += 1;//вниз
+	case 80: if (y != this->size+1)y += 1;//вниз
 		break;
 	case 75: if (x != 0)x -= 1;//влево
 		break;
-	case 77: if (x != 2)x += 1;//вправо
+	case 77: if (x != this->size + 1)x += 1;//вправо
 		break;
 	case 13: if (field[y][x] == 0)
 	{
 		field[y][x] = 1;
-		view(field);
+		if (this->size == 4) {
+			view1(field);
+		}
+		else {
+			view(field);
+		}
+
 		if (Winner(field, kol)) {
 			cout << "Вы победили!" << endl;
 			return false;
@@ -228,6 +240,13 @@ bool Game::move(int& x, int& y, vector<vector<int>>& field, int& kol)
 
 		++kol;
 		PlayerComputer(field, kol);
+		if (this->size == 4) {
+			view1(field);
+		}
+		else {
+			view(field);
+		}
+
 		if (Winner(field, kol)) {
 			cout << "Победил Компьютер!" << endl;
 			return false;
@@ -309,4 +328,218 @@ bool::Game::Winner(vector<vector<int>> array, int kol) {
 		}
 	}
 	return false;
+}
+void Game::view1(vector<vector<int>> array) {
+	system("cls");
+	cout << "-------------------------" << endl;
+	for (int i = 0; i < 4; i++)// проход по строке поля
+	{
+		for (int a = 1; a < 6; ++a)//проход по вертикали(построчно)
+		{
+			switch (a)
+			{
+			case 2:
+				switch (array[i][0])
+				{
+				case 0:cout << "|     "; break;
+				case 1:cout << "| X X "; break;
+				case 2:cout << "| 000 "; break;
+				case 3: case 4: cout << "| ";
+					SetColor(Red, White);
+					cout << "### ";
+					SetColor(LightGreen, White);
+					break;
+					//case 4:cout << "| ### "; break;
+				case 5:cout << "| ... "; break;
+				}
+				switch (array[i][1])
+				{
+				case 0:cout << "|     "; break;
+				case 1:cout << "| X X "; break;
+				case 2:cout << "| 000 "; break;
+				case 3: case 4: cout << "| ";
+					SetColor(Red, White);
+					cout << "### ";
+					SetColor(LightGreen, White);
+					break;
+				case 5:cout << "| ... "; break;
+
+				}
+				switch (array[i][2])
+				{
+				case 0:cout << "|     "; break;
+				case 1:cout << "| X X "; break;
+				case 2:cout << "| 000 "; break;
+				case 3: case 4: cout << "| ";
+					SetColor(Red, White);
+					cout << "### ";
+					SetColor(LightGreen, White);
+					break;
+				case 5:cout << "| ... "; break;
+
+				}
+
+				switch (this->size)
+				{
+				case 5: {
+
+				}
+				break;
+				case 4:
+				{
+					switch (array[i][3])
+					{
+					case 0:cout << "|     |"; break;
+					case 1:cout << "| X X |"; break;
+					case 2:cout << "| 000 |"; break;
+						/*case 3:cout << "| ### |"; break;
+						case 4:cout << "| ### |"; break;*/
+					case 3: case 4: cout << "| ";
+						SetColor(Red, White);
+						cout << "###";
+						SetColor(LightGreen, White);
+						cout << " |";
+						break;
+					case 5:cout << "| ... |"; break;
+					}
+				}
+				break;
+				default:
+					break;
+				}
+
+				cout << endl; break;
+			case 3:
+				switch (array[i][0])
+				{
+				case 0:cout << "|     "; break;
+				case 1:cout << "|  X  "; break;
+				case 2:cout << "| 0 0 "; break;
+				case 3: case 4: cout << "| ";
+					SetColor(Red, White);
+					cout << "### ";
+					SetColor(LightGreen, White);
+					break;
+				case 5:cout << "| ... "; break;
+				}
+				switch (array[i][1])
+				{
+				case 0:cout << "|     "; break;
+				case 1:cout << "|  X  "; break;
+				case 2:cout << "| 0 0 "; break;
+				case 3: case 4: cout << "| ";
+					SetColor(Red, White);
+					cout << "### ";
+					SetColor(LightGreen, White);
+					break;
+				case 5:cout << "| ... "; break;
+				}
+				switch (array[i][2])
+				{
+				case 0:cout << "|     "; break;
+				case 1:cout << "|  X  "; break;
+				case 2:cout << "| 0 0 "; break;
+				case 3: case 4: cout << "| ";
+					SetColor(Red, White);
+					cout << "### ";
+					SetColor(LightGreen, White);
+					break;
+				case 5:cout << "| ... "; break;
+				}
+				switch (this->size)
+				{
+				case 4:
+					switch (array[i][3])
+					{
+					case 0:cout << "|     |"; break;
+					case 1:cout << "|  X  |"; break;
+					case 2:cout << "| 0 0 |"; break;
+					case 3: case 4: cout << "| ";
+						SetColor(Red, White);
+						cout << "###";
+						SetColor(LightGreen, White);
+						cout << " |";
+						break;
+					case 5:cout << "| ... |"; break;
+					}
+					break;
+				default:
+					break;
+				}
+
+				
+
+
+				cout << endl; break;
+			case 4:
+				switch (array[i][0])
+				{
+				case 0:cout << "|     "; break;
+				case 1:cout << "| X X "; break;
+				case 2:cout << "| 000 "; break;
+				case 3: case 4: cout << "| ";
+					SetColor(Red, White);
+					cout << "### ";
+					SetColor(LightGreen, White);
+					break;
+				case 5:cout << "| ... "; break;
+				}
+				switch (array[i][1])
+				{
+				case 0:cout << "|     "; break;
+				case 1:cout << "| X X "; break;
+				case 2:cout << "| 000 "; break;
+				case 3: case 4: cout << "| ";
+					SetColor(Red, White);
+					cout << "### ";
+					SetColor(LightGreen, White);
+					break;
+				case 5:cout << "| ... "; break;
+				}
+				switch (array[i][2])
+				{
+				case 0:cout << "|     "; break;
+				case 1:cout << "| X X "; break;
+				case 2:cout << "| 000 "; break;
+				case 3: case 4: cout << "| ";
+					SetColor(Red, White);
+					cout << "### ";
+					SetColor(LightGreen, White);
+					break;
+				case 5:cout << "| ... "; break;
+				}
+
+				switch (this->size)
+				{
+
+				case 4:
+				{
+					switch (array[i][3])
+					{
+					case 0:cout << "|     |"; break;
+					case 1:cout << "| X X |"; break;
+					case 2:cout << "| 000 |"; break;
+					case 3: case 4: cout << "| ";
+						SetColor(Red, White);
+						cout << "###";
+						SetColor(LightGreen, White);
+						cout << " |";
+						break;
+					case 5:cout << "| ... |"; break;
+					}
+
+					break;
+				}
+				default:
+					break;
+				}
+				
+				cout << endl; break;
+			}
+		}
+
+		if (i == 2)cout << "-------------------------";
+		else cout << "-------------------------";
+		cout << endl;
+	}
 }
