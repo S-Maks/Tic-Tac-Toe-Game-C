@@ -4,12 +4,10 @@
 using namespace std;
 class Game {
 public:
-	void choiceLevel();
-	void start();
-private:
-	void view(vector<vector<int>>);
-	void view1(vector<vector<int>> array);
-	bool move(int& x, int& y, vector<vector<int>>& , int& kol);
+	static void choiceLevel();
+	
+protected:
+
 	void PlayerComputer(vector<vector<int>>&, int);
 	bool Winner(vector<vector<int>>, int);
 	int size;

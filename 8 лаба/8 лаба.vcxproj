@@ -138,16 +138,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="FirstLevel.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Header.cpp" />
     <ClCompile Include="Interface.cpp" />
     <ClCompile Include="Movement.cpp" />
+    <ClCompile Include="SecondLevel.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="ThirdLevel.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="FirstLevel.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Header.h" />
     <ClInclude Include="Movement.h" />
+    <ClInclude Include="SecondLevel.h" />
+    <ClInclude Include="ThirdLevel.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

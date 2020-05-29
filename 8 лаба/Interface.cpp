@@ -12,11 +12,10 @@ public:
 template <class T>
 void Interface<T>::menu()
 {
-	Game obj;
-	switch (MenuForEverything("\t\tМеню", "1 - Выбор уровня", "2 - О игре", "0 - Выход", " ", 3))
+	switch (MenuForEverything("\n\n\n\n\n\t\t\t\t\t\tМеню", "\t\t\t\t\t1 - Выбор уровня", "\t\t\t\t\t2 - О игре", "\t\t\t\t\t0 - Выход", " ", 3))
 	{
 	case 1:
-		obj.choiceLevel();
+		Game::choiceLevel();
 		break;
 	case 2:
 		break;

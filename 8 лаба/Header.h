@@ -1,7 +1,6 @@
 #pragma once
 #include <vector>
 #include "Game.h"
-#pragma once
 #include <iostream>
 #include <string>
 #include <Windows.h>
