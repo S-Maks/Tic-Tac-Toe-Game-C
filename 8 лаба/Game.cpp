@@ -31,24 +31,26 @@ void Game::choiceLevel() {
 		break;
 	}
 }
-
-
 void Game::PlayerComputer(vector<vector<int>>& array, int kol) {
 
 	if (kol < pow(this->size, 2)) {
 		cout << "Ходит Компьютер..." << endl;
-		while (true) {
-			int x, y;
-			srand(time(0));
-			x = rand() % this->size;
-			//Sleep(1000);
-			y = rand() % this->size;
+		if (Algorithms(array, kol)) {
 
-			if (array[x][y] == 0) {
-				array[x][y] = 2;
-				break;
+			while (true) {
+				int x, y;
+				srand(time(0));
+				x = rand() % this->size;
+				//Sleep(1000);
+				y = rand() % this->size;
+
+				if (array[x][y] == 0) {
+					array[x][y] = 2;
+					break;
+				}
 			}
 		}
+		
 	}
 	else {
 		cout << "Ходы закончились!" << endl;
@@ -57,7 +59,7 @@ void Game::PlayerComputer(vector<vector<int>>& array, int kol) {
 		SetColor(LightGreen, White);
 	}
 }
-bool::Game::Winner(vector<vector<int>> array, int kol) {
+bool Game::Winner(vector<vector<int>> array, int kol) {
 	for (int i = 0; i < this->size - 2; i++) {
 		for (int j = 0; j < this->size - 2; j++) {
 			if (array[i][j] == 1 && array[i + 1][j + 1] == 1 && array[i + 2][j + 2] == 1) {
@@ -68,7 +70,7 @@ bool::Game::Winner(vector<vector<int>> array, int kol) {
 			}
 		}
 	}
-	for (int i = this->size - 1; i > this->size - 2; i--) {
+	for (int i = this->size - 1; i > 1; i--) {
 		for (int j = 0; j < this->size - 2; j++) {
 			if (array[i][j] == 1 && array[i - 1][j + 1] == 1 && array[i - 2][j + 2] == 1) {
 				return true;
@@ -85,7 +87,6 @@ bool::Game::Winner(vector<vector<int>> array, int kol) {
 			if (array[i][j] == 2 && array[i][j + 1] == 2 && array[i][j + 2] == 2)
 				return true;
 		}
-
 	}
 
 	for (int i = 0; i < this->size; i++) {
@@ -97,4 +98,86 @@ bool::Game::Winner(vector<vector<int>> array, int kol) {
 		}
 	}
 	return false;
+}
+
+bool Game::Algorithms(vector<vector<int>>& array, int kol) {
+	/*Проверка выигрыша главной диагонали*/
+
+
+		cout << "Ходит Компьютер..." << endl;
+
+		for (int i = 0; i < this->size - 2; i++) {
+			for (int j = 0; j < this->size - 2; j++) {
+				if (array[i][j] == 0 && array[i + 1][j + 1] == 1 && array[i + 2][j + 2] == 1) {//проверка пустого первого элемента
+					array[i][j] = 2;
+					return false;
+				}
+				if (array[i][j] == 1 && array[i + 1][j + 1] == 0 && array[i + 2][j + 2] == 1) {//проверка пустого второго элемента
+					array[i + 1][j + 1] = 2;
+					return false;
+				}
+				if (array[i][j] == 1 && array[i + 1][j + 1] == 1 && array[i + 2][j + 2] == 0) {//проверка пустого Третьего элемента
+					array[i + 2][j + 2] = 2;
+					return false;
+				}
+			}
+		}
+		/*Проверяем побочную диагональ*/
+
+		for (int i = this->size - 1; i > 1; i--) {
+			for (int j = 0; j < this->size - 2; j++) {
+				if (array[i][j] == 0 && array[i - 1][j + 1] == 1 && array[i - 2][j + 2] == 1) {//проверка пустого первого элемента
+					array[i][j] = 2;
+					return false;
+				}
+				if (array[i][j] == 1 && array[i - 1][j + 1] == 0 && array[i - 2][j + 2] == 1) {//проверка пустого второго элемента
+					array[i-1][j+1] = 2;
+					return false;
+				}
+				if (array[i][j] == 1 && array[i - 1][j + 1] == 1 && array[i - 2][j + 2] == 0) {//проверка пустого Третьего элемента
+					array[i - 2][j + 2] = 2;
+					return false;
+				}
+			}
+		}
+		/*Проверяем строки*/
+		for (int i = 0; i < this->size; i++) {
+			for (int j = 0; j < this->size - 2; j++) {
+				if (array[i][j] == 0 && array[i][j + 1] == 1 && array[i][j + 2] == 1) {//проверка пустого первого элемента
+					array[i][j] = 2;
+					return false;
+				}
+				if (array[i][j] == 1 && array[i][j + 1] == 0 && array[i][j + 2] == 1) {//проверка пустого второго элемента
+					array[i][j + 1] = 2;
+					return false;
+				}
+				if (array[i][j] == 1 && array[i][j + 1] == 1 && array[i][j + 2] == 0) {
+					array[i][j + 2] = 2;
+					return false;
+				}
+
+			}
+		}
+
+		/*Проверяем столбцы*/
+		for (int i = 0; i < this->size; i++) {
+			for (int j = 0; j < this->size - 2; j++) {
+				if (array[j][i] == 0 && array[j + 1][i] == 1 && array[j + 2][i] == 1) {//проверка пустого первого элемента
+					array[j][i] = 2;
+					return false;
+				}
+				if (array[j][i] == 1 && array[j + 1][i] == 0 && array[j + 2][i] == 1) {//проверка пустого второго элемента
+					array[j + 1][i] = 2;
+					return false;
+				}
+				if (array[j][i] == 1 && array[j + 1][i] == 1 && array[j + 2][i] == 0) {//проверка пустого Третьего элемента
+					array[j + 2][i] = 2;
+					return false;
+				}
+
+			}
+		}
+
+	return true;
+
 }

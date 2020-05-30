@@ -1,4 +1,6 @@
 ﻿  FirstLevel.cpp
+  Game.cpp
+E:\2 Course\ООП\4 семестр\Tic-Tac-Toe-Game\8 лаба\Game.cpp(42,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
   SecondLevel.cpp
   ThirdLevel.cpp
   Создание кода...

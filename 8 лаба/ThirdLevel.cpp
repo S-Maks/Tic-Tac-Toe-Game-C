@@ -275,10 +275,9 @@ bool ThirdLevel::move(int& x, int& y, vector<vector<int>>& field, int& kol)
 			SetColor(LightGreen, White);
 			return false;
 		}
-
-
 		++kol;
-		PlayerComputer(field, kol);
+			PlayerComputer(field, kol);
+
 		view(field);
 
 		if (Winner(field, kol)) {

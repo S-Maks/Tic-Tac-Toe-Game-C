@@ -198,6 +198,8 @@ bool FirstLevel::move(int& x, int& y, vector<vector<int>>& field, int& kol)
 
 		++kol;
 		PlayerComputer(field, kol);
+
+
 		view(field);
 
 		if (Winner(field, kol)) {

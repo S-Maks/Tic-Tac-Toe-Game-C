@@ -142,7 +142,6 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Header.cpp" />
     <ClCompile Include="Interface.cpp" />
-    <ClCompile Include="Movement.cpp" />
     <ClCompile Include="SecondLevel.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="ThirdLevel.cpp" />
@@ -151,7 +150,6 @@
     <ClInclude Include="FirstLevel.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Header.h" />
-    <ClInclude Include="Movement.h" />
     <ClInclude Include="SecondLevel.h" />
     <ClInclude Include="ThirdLevel.h" />
   </ItemGroup>
