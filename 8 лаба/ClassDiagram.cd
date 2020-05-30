@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="FirstLevel" Collapsed="true">
+    <Position X="3.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAABAAAAAgAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FirstLevel.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Game" Collapsed="true">
+    <Position X="5.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABABAAAAAAICAAAAAAAAAAAAAAACAAAAEAAA=</HashCode>
+      <FileName>Game.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Interface&lt;T&gt;" Collapsed="true">
+    <Position X="10.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface.cpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SecondLevel" Collapsed="true">
+    <Position X="5.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAACgAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>SecondLevel.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ThirdLevel" Collapsed="true">
+    <Position X="7.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACgAAAACAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>ThirdLevel.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Multiplayer" Collapsed="true">
+    <Position X="5.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAAAAAAAAAAAAIgAAAAAAAAAA=</HashCode>
+      <FileName>Multiplayer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="ConsoleColor" Collapsed="true">
+    <Position X="10.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAnAAQAAQAAIgAAABAAAAAABAAAAAQAAAAACDAAAAA=</HashCode>
+      <FileName>Header.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

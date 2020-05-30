@@ -2,8 +2,9 @@
 #include "FirstLevel.h"
 #include "SecondLevel.h"
 #include "ThirdLevel.h"
+#include "Multiplayer.h"
 void Game::choiceLevel() {
-	switch (MenuForEverything("\n\n\n\n\n\t\t\t\t\t\tВыбор уровня сложности", "\t\t\t\t\t1 Уровень", "\t\t\t\t\t2 Уровень", "\t\t\t\t\t3 Уровень", "", 3))
+	switch (MenuForEverything("\n\n\n\n\n\t\t\t\t\t\tВыбор уровня сложности", "\t\t\t\t\t1 Уровень(3х3)", "\t\t\t\t\t2 Уровень(4х4)", "\t\t\t\t\t3 Уровень(5х5)", "\t\t\t\t\tМультиплеер", 4))
 	{
 	case 1:
 	{
@@ -26,6 +27,12 @@ void Game::choiceLevel() {
 		ThirdLevel obj;
 		obj.start();
 		break;
+	}
+	case 4: {
+		cout << "\t\tВыбран мультиплеерный режим" << endl;
+		Multiplayer obj;
+		obj.choiseSize();
+	break;
 	}
 	default:
 		break;

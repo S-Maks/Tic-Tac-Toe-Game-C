@@ -10,9 +10,8 @@ public:
 		this->size = 3;
 	}
 	void start();
-private:
+protected:
 	bool move(int& x, int& y, vector<vector<int>>&, int& kol);
 	void view(vector<vector<int>>);
-
 };
 

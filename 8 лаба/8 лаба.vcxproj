@@ -142,6 +142,7 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Header.cpp" />
     <ClCompile Include="Interface.cpp" />
+    <ClCompile Include="Multiplayer.cpp" />
     <ClCompile Include="SecondLevel.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="ThirdLevel.cpp" />
@@ -150,8 +151,12 @@
     <ClInclude Include="FirstLevel.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Header.h" />
+    <ClInclude Include="Multiplayer.h" />
     <ClInclude Include="SecondLevel.h" />
     <ClInclude Include="ThirdLevel.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
