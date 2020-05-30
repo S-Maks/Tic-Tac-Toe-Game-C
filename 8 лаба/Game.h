@@ -5,7 +5,7 @@ using namespace std;
 class Game {
 public:
 	static void choiceLevel();
-	
+	static void Help();
 protected:
 	bool AlgorithmsUnWin(vector<vector<int>>&);
 	bool AlgorithmsWin(vector<vector<int>>&);

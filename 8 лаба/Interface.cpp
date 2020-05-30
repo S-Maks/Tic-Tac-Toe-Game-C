@@ -18,6 +18,7 @@ void Interface<T>::menu()
 		Game::choiceLevel();
 		break;
 	case 2:
+		Game::Help();
 		break;
 	case 0:
 		break;

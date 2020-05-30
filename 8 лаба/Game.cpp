@@ -112,7 +112,6 @@ bool Game::Winner(vector<vector<int>> array, int kol) {
 	}
 	return false;
 }
-
 bool Game::AlgorithmsUnWin(vector<vector<int>>& array) {
 	/*Проверка выигрыша главной диагонали*/
 
@@ -198,7 +197,7 @@ bool Game::AlgorithmsWin(vector<vector<int>>& array) {
 	/*Проверка выигрыша главной диагонали*/
 
 
-	cout << "Ходит Компьютер..." << endl;
+	
 
 	for (int i = 0; i < this->size - 2; i++) {
 		for (int j = 0; j < this->size - 2; j++) {
@@ -273,4 +272,26 @@ bool Game::AlgorithmsWin(vector<vector<int>>& array) {
 	}
 
 	return true;
+}
+void Game::Help() {
+	system("cls");
+	SetColor(LightBlue, White);
+	cout << "\n\n\n\t\t\t  Игру написал студент БГУИР'а Титок Максим" << endl;
+	SetColor(LightRed, White);
+	cout << "\n\t\t\t\t     Правила игры" << endl;
+	SetColor(Black, White);
+	cout << endl << "\t\t   Игроки по очереди ставят на свободные клетки поля знаки\n\t\t   (один всегда крестики, другой всегда нолики).\n\t\t   Первый, выстроивший в ряд 3 своих фигуры по вертикали,\n\t\t   горизонтали или диагонали, выигрывает.\n\t\t   Первый ход делает игрок, ставящий крестики." << endl;
+
+	cout << "\n\t\t1. Если игрок может немедленно выиграть, он это делает." << endl;
+	cout << "\n\t\t2. Если игрок не может немедленно выиграть, но его противник\n\t\t   мог бы немедленно выиграть, сделав ход в какую-то клетку,\n\t\t   игрок сам делает ход в эту клетку, предотвращая немедленный проигрыш." << endl;
+	SetColor(LightBlue, White);
+	cout << "\n\t\t\t\t\tО игре" << endl;
+	SetColor(Black, White);
+	cout << "\t\t   Крестики-нолики — логическая игра между двумя противниками на квадратном поле.\n\t\t   Один из игроков играет «крестиками», второй — «ноликами»." << endl;
+	SetColor(LightRed, White);
+	cout << "\n\t\t\t\tВсе права не защищены. " << endl;
+	SetColor(Black, White);
+	cout << "\t\t   Игра хранится в открытом доступе на Github.\n\t\t   Игра является демонстрацией знаний ООП" << endl;
+	SetColor(LightGreen, White);
+
 }
