@@ -7,7 +7,8 @@ public:
 	static void choiceLevel();
 	
 protected:
-	bool Algorithms(vector<vector<int>>&, int);
+	bool AlgorithmsUnWin(vector<vector<int>>&);
+	bool AlgorithmsWin(vector<vector<int>>&);
 	void PlayerComputer(vector<vector<int>>&, int);
 	bool Winner(vector<vector<int>>, int);
 	int size;
