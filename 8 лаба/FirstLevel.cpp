@@ -59,7 +59,7 @@ void FirstLevel::view(vector<vector<int>> array) {
 				case 0:cout << "\t\t\t|     "; break;
 				case 1:cout << "\t\t\t|  X  "; break;
 				case 2:cout << "\t\t\t| 0 0 "; break;
-				case 3: case 4: cout << "| ";
+				case 3: case 4: cout << "\t\t\t| ";
 					SetColor(Red, White);
 					cout << "### ";
 					SetColor(LightGreen, White);
