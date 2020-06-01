@@ -66,7 +66,7 @@ void ThirdLevel::view(vector<vector<int>> array) {
 				{
 				case 0:cout << "|     |"; break;
 				case 1:cout << "| X X |"; break;
-				case 2:cout << "| 0 0 |"; break;
+				case 2:cout << "| 000 |"; break;
 					/*case 3:cout << "| ### |"; break;
 					case 4:cout << "| ### |"; break;*/
 				case 3: case 4: cout << "| ";
@@ -106,7 +106,7 @@ void ThirdLevel::view(vector<vector<int>> array) {
 				switch (array[i][2])
 				{
 				case 0:cout << "|     "; break;
-				case 1:cout << "| X X "; break;
+				case 1:cout << "|  X  "; break;
 				case 2:cout << "| 0 0 "; break;
 				case 3: case 4: cout << "| ";
 					SetColor(Red, White);
@@ -119,7 +119,7 @@ void ThirdLevel::view(vector<vector<int>> array) {
 				switch (array[i][3])
 				{
 				case 0:cout << "|     "; break;
-				case 1:cout << "| X X "; break;
+				case 1:cout << "|  X  "; break;
 				case 2:cout << "| 0 0 "; break;
 				case 3: case 4: cout << "| ";
 					SetColor(Red, White);
@@ -132,7 +132,7 @@ void ThirdLevel::view(vector<vector<int>> array) {
 				switch (array[i][4])
 				{
 				case 0:cout << "|     |"; break;
-				case 1:cout << "| X X |"; break;
+				case 1:cout << "|  X  |"; break;
 				case 2:cout << "| 0 0 |"; break;
 					/*case 3:cout << "| ### |"; break;
 					case 4:cout << "| ### |"; break;*/

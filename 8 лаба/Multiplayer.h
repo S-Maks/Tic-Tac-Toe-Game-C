@@ -2,6 +2,7 @@
 #include "FirstLevel.h"
 #include "SecondLevel.h"
 #include "ThirdLevel.h"
+
 class Multiplayer :
 	public FirstLevel, public SecondLevel, public ThirdLevel
 {
@@ -13,11 +14,15 @@ public:
 
 	}
 	void start(int );
-	bool move(int& x, int& y, vector<vector<int>>&, int& kol, int size);
+	
+
+	bool move(int& x, int& y, vector<vector<int>>&, int& kol, int size, int role);
 	void choiseSize();
 	void setSize(int);
 	int getSize();
 	void getView(vector<vector<int>>);
+private:
+	string name1, name2;
 };
 
 

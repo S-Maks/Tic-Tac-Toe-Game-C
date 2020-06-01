@@ -11,9 +11,49 @@ void Multiplayer::start(int size) {
 	int kol = 0;
 	int x = 0; int y = 0;
 	bool flag = true;
+	SetColor(LightBlue, White);
+	cout << "\n\t\t\tВведите имя первого игрока:";
+	SetColor(LightGreen, White);
+	cin >> this->name1;
+	SetColor(LightBlue, White);
+	cout << "\n\t\t\tВведите имя второго игрока:";
+	SetColor(LightGreen, White);
+	cin >> this->name2;
 	while (kol < pow(size, 2) && flag) {
 		this->getView(array);
-		flag = move(x, y, array, kol, size);
+
+
+		while (flag) {
+			SetColor(LightMagenta, White);
+			cout << "\n\t\t\tХодит " << name1 << " (крестики)" << endl;
+			SetColor(LightGreen, White);
+			flag = move(x, y, array, kol, size, 1);
+			getView(array);
+			
+		}
+		kol++;
+		flag = true;
+		if (Game::Winner(array, kol)) {
+			SetColor(LightBlue, White);
+			cout << "\t\t\tПобедил " << name1 << "!" << endl;
+			SetColor(LightGreen, White); return;
+		}
+		while (flag) {
+			SetColor(LightBlue, White);
+			cout << "\n\t\t\tХодит " << name2 << " (нолики)" << endl;
+			SetColor(LightGreen, White);
+			flag = move(x, y, array, kol, size, 2);
+			getView(array);
+			
+		}
+		kol++;
+		flag = true;
+		if (Game::Winner(array, kol)) {
+			SetColor(LightBlue, White);
+			cout << "\t\t\tПобедил " <<name2<<"!"<< endl;
+			SetColor(LightGreen, White);
+			return;
+		}
 	}
 }
 void Multiplayer::setSize(int size) {
@@ -66,7 +106,7 @@ void Multiplayer::choiseSize() {
 		break;
 	}
 }
-bool Multiplayer::move(int& x, int& y, vector<vector<int>>& field, int& kol, int size)
+bool Multiplayer::move(int& x, int& y, vector<vector<int>>& field, int& kol, int size, int role)
 {
 	switch (field[y][x])
 	{
@@ -94,24 +134,32 @@ bool Multiplayer::move(int& x, int& y, vector<vector<int>>& field, int& kol, int
 		break;
 	case 13: if (field[y][x] == 0)
 	{
-		field[y][x] = 1;
-		this->getView(field);
+		if (role == 1) {
+			field[y][x] = 1;
+			return false;
+		}
+		else {
+			field[y][x] = 2;
+			return false;
+		}
+		
+		/*this->getView(field);
 
 		if (Game::Winner(field, kol)) {
 			SetColor(LightBlue, White);
 			cout << "Вы победили!" << endl;
 			SetColor(LightGreen, White);
 			return false;
-		}
+		}*/
 
 
-		++kol;
+		
 		//PlayerComputer(field, kol);
 
 
 		this->getView(field);
 
-		if (Game::Winner(field, kol)) {
+		/*if (Game::Winner(field, kol)) {
 			SetColor(LightRed, White);
 			cout << "Победил Компьютер!" << endl;
 			SetColor(LightGreen, White);
@@ -119,7 +167,7 @@ bool Multiplayer::move(int& x, int& y, vector<vector<int>>& field, int& kol, int
 		}
 
 		++kol;
-
+		*/
 	}
 		   break;
 	default: cout << endl << "error" << endl;

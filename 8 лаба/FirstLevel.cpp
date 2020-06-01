@@ -2,7 +2,7 @@
 
 void FirstLevel::view(vector<vector<int>> array) {
 	system("cls");
-	cout << "-------------------" << endl;
+	cout << "\n\n\n\t\t\t-------------------" << endl;
 	for (int i = 0; i < this->size; i++)// проход по строке поля
 	{
 		for (int a = 1; a < 6; ++a)//проход по вертикали(построчно)
@@ -13,16 +13,16 @@ void FirstLevel::view(vector<vector<int>> array) {
 			case 2:
 				switch (array[i][0])
 				{
-				case 0:cout << "|     "; break;
-				case 1:cout << "| X X "; break;
-				case 2:cout << "| 000 "; break;
-				case 3: case 4: cout << "| ";
+				case 0:cout << "\t\t\t|     "; break;
+				case 1:cout << "\t\t\t| X X "; break;
+				case 2:cout << "\t\t\t| 000 "; break;
+				case 3: case 4: cout << "\t\t\t| ";
 					SetColor(Red, White);
 					cout << "### ";
 					SetColor(LightGreen, White);
 					break;
 					//case 4:cout << "| ### "; break;
-				case 5:cout << "| ... "; break;
+				case 5:cout << "\t\t\t| ... "; break;
 				}
 				switch (array[i][1])
 				{
@@ -56,15 +56,15 @@ void FirstLevel::view(vector<vector<int>> array) {
 			case 3:
 				switch (array[i][0])
 				{
-				case 0:cout << "|     "; break;
-				case 1:cout << "|  X  "; break;
-				case 2:cout << "| 0 0 "; break;
+				case 0:cout << "\t\t\t|     "; break;
+				case 1:cout << "\t\t\t|  X  "; break;
+				case 2:cout << "\t\t\t| 0 0 "; break;
 				case 3: case 4: cout << "| ";
 					SetColor(Red, White);
 					cout << "### ";
 					SetColor(LightGreen, White);
 					break;
-				case 5:cout << "| ... "; break;
+				case 5:cout << "\t\t\t| ... "; break;
 				}
 				switch (array[i][1])
 				{
@@ -95,15 +95,15 @@ void FirstLevel::view(vector<vector<int>> array) {
 			case 4:
 				switch (array[i][0])
 				{
-				case 0:cout << "|     "; break;
-				case 1:cout << "| X X "; break;
-				case 2:cout << "| 000 "; break;
-				case 3: case 4: cout << "| ";
+				case 0:cout << "\t\t\t|     "; break;
+				case 1:cout << "\t\t\t| X X "; break;
+				case 2:cout << "\t\t\t| 000 "; break;
+				case 3: case 4: cout << "\t\t\t| ";
 					SetColor(Red, White);
 					cout << "### ";
 					SetColor(LightGreen, White);
 					break;
-				case 5:cout << "| ... "; break;
+				case 5:cout << "\t\t\t| ... "; break;
 				}
 				switch (array[i][1])
 				{
@@ -134,8 +134,8 @@ void FirstLevel::view(vector<vector<int>> array) {
 			}
 		}
 
-		if (i == 2)cout << "-------------------";
-		else cout << "-------------------";
+		if (i == 2)cout << "\t\t\t-------------------";
+		else cout << "\t\t\t-------------------";
 		cout << endl;
 	}
 }
