@@ -36,7 +36,9 @@ void Multiplayer::start(int size) {
 		if (Game::Winner(array, kol)) {
 			SetColor(LightBlue, White);
 			cout << "\t\t\tПобедил " << name1 << "!" << endl;
-			SetColor(LightGreen, White); return;
+			SetColor(LightGreen, White); 
+			system("pause");
+			return;
 		}
 		while (flag) {
 			SetColor(LightBlue, White);
@@ -52,6 +54,7 @@ void Multiplayer::start(int size) {
 			SetColor(LightBlue, White);
 			cout << "\t\t\tПобедил " <<name2<<"!"<< endl;
 			SetColor(LightGreen, White);
+			system("pause");
 			return;
 		}
 	}

@@ -270,9 +270,10 @@ bool ThirdLevel::move(int& x, int& y, vector<vector<int>>& field, int& kol)
 		view(field);
 
 		if (Winner(field, kol)) {
-			SetColor(LightBlue, White);
-			cout << "Вы победили!" << endl;
+			SetColor(LightBlue, White);	
+			cout << "\t\t\t Вы победили!" << endl;
 			SetColor(LightGreen, White);
+			system("pause");
 			return false;
 		}
 		++kol;
@@ -282,8 +283,9 @@ bool ThirdLevel::move(int& x, int& y, vector<vector<int>>& field, int& kol)
 
 		if (Winner(field, kol)) {
 			SetColor(LightRed, White);
-			cout << "Победил Компьютер!" << endl;
+			cout << "\t\t\t Победил компьютер!" << endl;
 			SetColor(LightGreen, White);
+			system("pause");
 			return false;
 		}
 

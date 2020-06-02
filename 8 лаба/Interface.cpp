@@ -12,19 +12,24 @@ public:
 template <class T>
 void Interface<T>::menu()
 {
-	switch (MenuForEverything("\n\n\n\n\n\t\t\t\t\t\tМеню", "\t\t\t\t\t1 - Выбор уровня", "\t\t\t\t\t2 - О игре", "\t\t\t\t\t0 - Выход", " ", 3))
-	{
-	case 1:
-		Game::choiceLevel();
-		break;
-	case 2:
-		Game::Help();
-		break;
-	case 0:
-		break;
-	default:
-		break;
-	}
+	bool flag = true;
+	while (flag) {
+		switch (MenuForEverything("\n\n\n\n\n\t\t\t\t\t\tМеню", "\t\t\t\t\t Выбор уровня", "\t\t\t\t\t О игре", "\t\t\t\t\t Выход", " ", 3))
+		{
+		case 1:
+			Game::choiceLevel();
+			break;
+		case 2:
+			Game::Help();
+			system("pause");
+			break;
+		case 3:flag = false;
+			break;
+		default:
+			break;
+		}
 
+	}
+	
 
 }

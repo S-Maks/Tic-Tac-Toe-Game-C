@@ -232,8 +232,9 @@ bool SecondLevel::move(int& x, int& y, vector<vector<int>>& field, int& kol)
 
 		if (Winner(field, kol)) {
 			SetColor(LightBlue, White);
-			cout << "Вы победили!" << endl;
+			cout << "\t\t\t Вы победили!" << endl;
 			SetColor(LightGreen, White);
+			system("pause");
 			return false;
 		}
 
@@ -245,8 +246,9 @@ bool SecondLevel::move(int& x, int& y, vector<vector<int>>& field, int& kol)
 
 		if (Winner(field, kol)) {
 			SetColor(LightRed, White);
-			cout << "Победил Компьютер!" << endl;
+			cout << "\t\t\t Победил компьютер!" << endl;
 			SetColor(LightGreen, White);
+			system("pause");
 			return false;
 		}
 
